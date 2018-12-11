@@ -1,17 +1,28 @@
-// Tic Tac Toe in the console!
+import java.util.*;
 
-public class tic-tac-toe {
 
+// Tic Tac Toe
+
+
+public class DONOW12102018 {
+	
+	
 	public static void main(String args[]) {
 		Scanner in = new Scanner(System.in);
 		String[][] board = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
+		int turns = 0;
 		while(true) {
 			Scanner input1 = new Scanner(askForInput(in, board, 1));
 			board[input1.nextInt() - 1][input1.nextInt() - 1] = "X";
 			input1.close();
+			turns++;
 			
 			printBoard(board);
 			
+			if(turns == 9 && !checkForWinner(board)) {
+				System.out.println("It's a Draw!");
+				break;
+			}
 			if(checkForWinner(board)) {
 				System.out.println("Player 1 won!");
 				break;
@@ -20,8 +31,10 @@ public class tic-tac-toe {
 			Scanner input2 = new Scanner(askForInput(in, board, 2));
 			board[input2.nextInt() - 1][input2.nextInt() - 1] = "O";
 			input2.close();
+			turns++;
 			
 			printBoard(board);
+					
 			
 			if(checkForWinner(board)) {
 				System.out.println("Player 2 won!");
@@ -31,8 +44,7 @@ public class tic-tac-toe {
 		}
 		in.close();
 	}
-	
-	
+
 	public static boolean checkForWinner(String[][] board) {
 		for(int n = 0; n < board.length; n++) {
 			if((board[n][0] == "X" && board[n][1] == "X" && board[n][2] == "X") || (board[n][0] == "O" && board[n][1] == "O" && board[n][2] == "O"))
