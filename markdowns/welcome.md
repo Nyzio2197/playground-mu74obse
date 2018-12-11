@@ -4,7 +4,7 @@ import java.util.*;
 // Tic Tac Toe
 
 
-public class DONOW12102018 {
+public class TicTacToe {
 	
 	
 	public static void main(String args[]) {
