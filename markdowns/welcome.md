@@ -47,16 +47,20 @@ public class TicTacToe {
 
 	public static boolean checkForWinner(String[][] board) {
 		for(int n = 0; n < board.length; n++) {
-			if((board[n][0] == "X" && board[n][1] == "X" && board[n][2] == "X") || (board[n][0] == "O" && board[n][1] == "O" && board[n][2] == "O"))
+			if((board[n][0] == "X" && board[n][1] == "X" && board[n][2] == "X") || 
+			(board[n][0] == "O" && board[n][1] == "O" && board[n][2] == "O"))
 				return true;				
 		}
 		for(int n = 0; n < board.length; n++) {
-			if((board[0][n] == "X" && board[1][n] == "X" && board[2][n] == "X") || (board[0][n] == "O" && board[1][n] == "O" && board[2][n] == "O"))
+			if((board[0][n] == "X" && board[1][n] == "X" && board[2][n] == "X") || 
+			(board[0][n] == "O" && board[1][n] == "O" && board[2][n] == "O"))
 				return true		;		
 		}
-		if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") || (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O"))
+		if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") || 
+		(board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O"))
 			return true;
-		if((board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") || (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O"))
+		if((board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") || 
+		(board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O"))
 			return true;
 		return false;
 	}
